@@ -18,6 +18,7 @@
 # limitations under the License.
 #
 
+node.default['cloudfoundry_dea']['ruby_version'] = node['cloudfoundry']['ruby_version']
 node.default['cloudfoundry_dea']['pid_file'] = File.join(node['cloudfoundry']['pid_dir'], "dea.pid")
 node.default['cloudfoundry_dea']['log_file'] = File.join(node['cloudfoundry']['log_dir'], "dea.log")
 
@@ -29,6 +30,7 @@ cloudfoundry_source "dea" do
   path          node['cloudfoundry_dea']['vcap']['install_path']
   repository    node['cloudfoundry_dea']['vcap']['repo']
   reference     node['cloudfoundry_dea']['vcap']['reference']
+  ruby_version  node['cloudfoundry_dea']['ruby_version']
 end
 
 directory node['cloudfoundry_dea']['base_dir'] do
@@ -39,6 +41,7 @@ end
 
 cloudfoundry_component "dea" do
   install_path  node['cloudfoundry_dea']['vcap']['install_path']
+  ruby_version  node['cloudfoundry_dea']['ruby_version']
   pid_file      node['cloudfoundry_dea']['pid_file']
   log_file      node['cloudfoundry_dea']['log_file']
   action        [:create, :enable]
