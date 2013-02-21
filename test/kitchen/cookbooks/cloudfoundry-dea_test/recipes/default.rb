@@ -19,8 +19,8 @@
 
 include_recipe "nats::server"
 
-node['cloudfoundry_dea']['vcap']['install_path']  = "/opt/test/dea"
-node['cloudfoundry_dea']['base_dir']              = "/var/test/dea"
+node.default['cloudfoundry_dea']['vcap']['install_path']  = "/opt/test/dea"
+node.default['cloudfoundry_dea']['base_dir']              = "/var/test/dea"
 
 cloudfoundry_runtime "canary" do
   version       "1.0"
