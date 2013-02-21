@@ -5,6 +5,11 @@ Install the Cloud Foundry [DEA](https://github.com/cloudfoundry/dea)
 (Droplet Execution Agent), a mandatory component of a
 [Cloud Foundry](http://www.cloudfoundry.org) installation.
 
+*NOTE*: for the DEA to be useful at all, you need to also install one or more
+runtimes. Currently supported runtimes are:
+
+* [cloudfoundry-ruby-runtime](https://github.com/zephirworks/cloudfoundry-ruby-runtime)
+
 Requirements
 ============
 
@@ -63,6 +68,10 @@ with the necessary configuration files and init scripts to run it. Simply add
 it to your run list:
 
     run_list "recipe[cloudfoundry-dea]"
+
+To also install support for ruby apps:
+
+    run_list "recipe[cloudfoundry-dea]", "recipe[cloudfoundry-ruby-runtime]"
 
 License and Author
 ==================
