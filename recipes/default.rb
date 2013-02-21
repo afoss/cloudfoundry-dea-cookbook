@@ -22,7 +22,14 @@ node.default['cloudfoundry_dea']['ruby_version'] = node['cloudfoundry']['ruby_ve
 node.default['cloudfoundry_dea']['pid_file'] = File.join(node['cloudfoundry']['pid_dir'], "dea.pid")
 node.default['cloudfoundry_dea']['log_file'] = File.join(node['cloudfoundry']['log_dir'], "dea.log")
 
+ruby_ver = node['cloudfoundry_dea']['ruby_version']
+ruby_path = ruby_bin_path(ruby_ver)
+
 include_recipe "cloudfoundry::user"
+include_recipe "rbenv::default"
+include_recipe "rbenv::ruby_build"
+
+rbenv_ruby ruby_ver
 
 %w{lsof psmisc librmagick-ruby}.each do |pkg|
   package pkg

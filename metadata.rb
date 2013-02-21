@@ -11,3 +11,4 @@ version          "1.1.2"
 end
 
 depends "cloudfoundry", "~> 1.3.0"
+depends "rbenv"
