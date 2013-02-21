@@ -47,18 +47,26 @@ Cookbooks
 Attributes
 ==========
 
-* `cloudfoundry_dea[:pid_file]` - Where to write the DEA's pid file. Default is `File.join(node['cloudfoundry']['pid_dir'], "dea.pid")`.
-* `cloudfoundry_dea[:log_file]` - Where to write the DEA's logs. Default is `File.join(node['cloudfoundry']['log_dir'], "dea.log")`.
-* `cloudfoundry_dea[:runtimes]` - Array of hashes storing the `name`, `cookbook`, `executable`, `version`, and `version_flag` for each runtime supported by this DEA.  TODO (trotter): Make the runtime's cookbook contain most of this info Default is `[`.
-* `cloudfoundry_dea[:base_dir]` - TODO (trotter): Find out what is stored here. Default is `/var/vcap/data/dea"`.
-* `cloudfoundry_dea[:filter_port]` - TODO (trotter): Find out what this does. Default is `12345`.
-* `cloudfoundry_dea[:heartbeat]` - Interval (in seconds) between heartbeats sent to the Health Manager. Default is `10`.
-* `cloudfoundry_dea[:advertise]` - Interval (in seconds) for sending
-advertisments of available resources. Default is `5`.
-* `cloudfoundry_dea[:log_level]` - Log level for the DEA. Default is `info"`.
-* `cloudfoundry_dea[:max_memory]` - The maximum amount of memory this DEA is allowed to allocate across all its applications. Default is `4096`.
-* `cloudfoundry_dea[:secure_env]` - TODO (trotter): Find out what this does. Default is `false`.
-* `cloudfoundry_dea[:multi_tenant]` - Allow the DEA to manage more than one application. Default is `true`.
+* `node['cloudfoundry_dea']['pid_file']` - Where to write the DEA's pid file.
+Defaults to `File.join(node['cloudfoundry']['pid_dir'], "dea.pid")`.
+* `node['cloudfoundry_dea']['log_file']` - Where to write the DEA's logs.
+Defaults to `File.join(node['cloudfoundry']['log_dir'], "dea.log")`.
+* `node['cloudfoundry_dea']['base_dir']` - TODO (trotter): Find out what is
+stored here. Defaults to `/var/vcap/data/dea"`.
+* `node['cloudfoundry_dea']['filter_port']` - TODO (trotter): Find out what
+this does. Defaults to `12345`.
+* `node['cloudfoundry_dea']['heartbeat']` - Interval (in seconds) between
+heartbeats sent to the Health Manager. Defaults to `10`.
+* `node['cloudfoundry_dea']['advertise']` - Interval (in seconds) for sending
+advertisments of available resources. Defaults to `5`.
+* `node['cloudfoundry_dea']['log_level']` - Log level for the DEA. Defaults
+to `info"`.
+* `node['cloudfoundry_dea']['max_memory']` - The maximum amount of memory this
+DEA is allowed to allocate across all its applications. Defaults to `4096`.
+* `node['cloudfoundry_dea']['secure_env']` - TODO (trotter): Find out what
+this does. Defaults to `false`.
+* `node['cloudfoundry_dea']['multi_tenant']` - Allow the DEA to manage more
+than one application. Defaults to `true`.
 
 Usage
 =====
