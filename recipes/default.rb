@@ -31,7 +31,7 @@ include_recipe "rbenv::ruby_build"
 
 rbenv_ruby ruby_ver
 
-%w{lsof psmisc librmagick-ruby}.each do |pkg|
+%w{lsof psmisc}.each do |pkg|
   package pkg
 end
 
