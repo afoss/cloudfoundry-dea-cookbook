@@ -57,4 +57,5 @@ default['cloudfoundry_dea']['index'] = nil
 
 default['cloudfoundry_dea']['detect_port_timeout'] = 120
 
+# Internal only, nothing to see here.
 default['cloudfoundry_dea']['runtimes'] = {}
