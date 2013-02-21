@@ -37,6 +37,7 @@ Cookbooks
 ---------
 
 * cloudfoundry
+* rbenv
 
 Attributes
 ==========
